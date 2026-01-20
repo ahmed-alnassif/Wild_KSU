@@ -2,7 +2,7 @@ name: Build Manager
 
 on:
   push:
-    branches: [ "wild-stable" ]
+    branches: [ "stable" ]
     paths:
       - '.github/workflows/build-manager.yml'
       - '.github/workflows/build-lkm.yml'
@@ -11,7 +11,10 @@ on:
       - 'kernel/**'
       - 'userspace/**'
   pull_request:
-    branches: [ "wild-stable" ]
+    branches:
+      - stable
+      - beta
+      - canary
     paths:
       - '.github/workflows/build-manager.yml'
       - '.github/workflows/build-lkm.yml'
